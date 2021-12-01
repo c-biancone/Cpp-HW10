@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/cygdrive/d/Documents/RIT/Semester_4/C++/Homework-10/ChatSession.cpp" "/cygdrive/d/Documents/RIT/Semester_4/C++/Homework-10/cmake-build-debug/CMakeFiles/Homework_10.dir/ChatSession.cpp.o"
   "/cygdrive/d/Documents/RIT/Semester_4/C++/Homework-10/main.cpp" "/cygdrive/d/Documents/RIT/Semester_4/C++/Homework-10/cmake-build-debug/CMakeFiles/Homework_10.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

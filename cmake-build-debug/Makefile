@@ -129,6 +129,30 @@ Homework_10/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Homework_10.dir/build.make CMakeFiles/Homework_10.dir/build
 .PHONY : Homework_10/fast
 
+ChatSession.o: ChatSession.cpp.o
+.PHONY : ChatSession.o
+
+# target to build an object file
+ChatSession.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Homework_10.dir/build.make CMakeFiles/Homework_10.dir/ChatSession.cpp.o
+.PHONY : ChatSession.cpp.o
+
+ChatSession.i: ChatSession.cpp.i
+.PHONY : ChatSession.i
+
+# target to preprocess a source file
+ChatSession.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Homework_10.dir/build.make CMakeFiles/Homework_10.dir/ChatSession.cpp.i
+.PHONY : ChatSession.cpp.i
+
+ChatSession.s: ChatSession.cpp.s
+.PHONY : ChatSession.s
+
+# target to generate assembly for a file
+ChatSession.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Homework_10.dir/build.make CMakeFiles/Homework_10.dir/ChatSession.cpp.s
+.PHONY : ChatSession.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -162,6 +186,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Homework_10"
+	@echo "... ChatSession.o"
+	@echo "... ChatSession.i"
+	@echo "... ChatSession.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
