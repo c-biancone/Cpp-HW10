@@ -1,0 +1,7 @@
+HELLO:Nice night for a walk.
+GOODBYE:I'll be back.
+WHY:I am a friend of Sarah Connor.
+WHAT:Come with me if you want to live.
+NEED:I need your clothes, your boots, and your motorcycle.
+NO:Hasta la vista baby!
+SO:My mission is to protect you.

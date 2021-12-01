@@ -1,0 +1,5 @@
+HELLO:Number 5 is alive!
+GOODBYE:Disassemble.
+WHY:Malfunction. Need input.
+HUNGRY:Yes.
+EAT:Fish. Salmon. Sushi.
