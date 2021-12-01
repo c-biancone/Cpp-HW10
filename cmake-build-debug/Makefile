@@ -129,6 +129,30 @@ Homework_10/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Homework_10.dir/build.make CMakeFiles/Homework_10.dir/build
 .PHONY : Homework_10/fast
 
+ChatBot.o: ChatBot.cpp.o
+.PHONY : ChatBot.o
+
+# target to build an object file
+ChatBot.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Homework_10.dir/build.make CMakeFiles/Homework_10.dir/ChatBot.cpp.o
+.PHONY : ChatBot.cpp.o
+
+ChatBot.i: ChatBot.cpp.i
+.PHONY : ChatBot.i
+
+# target to preprocess a source file
+ChatBot.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Homework_10.dir/build.make CMakeFiles/Homework_10.dir/ChatBot.cpp.i
+.PHONY : ChatBot.cpp.i
+
+ChatBot.s: ChatBot.cpp.s
+.PHONY : ChatBot.s
+
+# target to generate assembly for a file
+ChatBot.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Homework_10.dir/build.make CMakeFiles/Homework_10.dir/ChatBot.cpp.s
+.PHONY : ChatBot.cpp.s
+
 ChatSession.o: ChatSession.cpp.o
 .PHONY : ChatSession.o
 
@@ -186,6 +210,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Homework_10"
+	@echo "... ChatBot.o"
+	@echo "... ChatBot.i"
+	@echo "... ChatBot.s"
 	@echo "... ChatSession.o"
 	@echo "... ChatSession.i"
 	@echo "... ChatSession.s"

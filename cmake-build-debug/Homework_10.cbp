@@ -80,6 +80,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/cygdrive/d/Documents/RIT/Semester_4/C++/Homework-10/ChatBot.cpp">
+			<Option target="Homework_10"/>
+		</Unit>
+		<Unit filename="/cygdrive/d/Documents/RIT/Semester_4/C++/Homework-10/ChatBot.h">
+			<Option target="Homework_10"/>
+		</Unit>
 		<Unit filename="/cygdrive/d/Documents/RIT/Semester_4/C++/Homework-10/ChatSession.cpp">
 			<Option target="Homework_10"/>
 		</Unit>

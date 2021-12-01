@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Homework_10.dir/ChatBot.cpp.o"
   "CMakeFiles/Homework_10.dir/ChatSession.cpp.o"
   "CMakeFiles/Homework_10.dir/main.cpp.o"
   "Homework_10.exe"
