@@ -27,5 +27,4 @@ void ChatSession::notifyBots(std::string message)
 
 void ChatSession::run()
 {
-
 }
