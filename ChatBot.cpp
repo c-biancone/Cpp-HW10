@@ -5,6 +5,8 @@
 #include "ChatBot.h"
 #include <iostream>
 #include <fstream>
+#include <algorithm>
+#include <sstream>
 
 using namespace std;
 
@@ -18,9 +20,23 @@ void ChatBot::newMessage(std::string message)
     cout.flush();
     getline(cin >> ws, message);
 
-    for (char c : message)
+    // convert to uppercase
+    for_each(message.begin(), message.end(), [](char& c){c = ::toupper(c);});
+
+    // iterate through words and check matches with keys
+    string tmp;
+    stringstream strStrm(message);
+    map<string, string>::iterator it;
+    while (strStrm >> tmp)
     {
-        [message, &c] () {return toupper(c);};
+        // search for word in keys
+        it = responses.find(tmp);
+        // if exists
+        if (it != responses.end())
+        {
+            // print response
+            cout << it->second << "\n";
+        }
     }
 }
 

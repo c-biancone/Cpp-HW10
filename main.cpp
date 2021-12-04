@@ -43,7 +43,7 @@ int main()
     }
 
     // Run the chat session
-
+    session.run();
 
     return 0;
 }
