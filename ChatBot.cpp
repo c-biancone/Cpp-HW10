@@ -3,6 +3,8 @@
 //
 
 #include "ChatBot.h"
+#include <iostream>
+#include <fstream>
 
 using namespace std;
 
@@ -13,10 +15,29 @@ ChatBot::ChatBot(std::string name)
 
 void ChatBot::newMessage(std::string message)
 {
-    // parse algo
+    cout.flush();
+    getline(cin >> ws, message);
+
+    for (char c : message)
+    {
+        [message, &c] () {return toupper(c);};
+    }
 }
 
 void ChatBot::loadResponses(std::string fileName)
 {
-    // populate map
+    ifstream data;
+    char delimiter(':');
+
+    data.open(fileName);
+
+    string key;
+    string response;
+
+    while(getline(data, key, delimiter) && getline(data, response))
+    {
+        responses[key] = response;
+    }
+
+    data.close();
 }
