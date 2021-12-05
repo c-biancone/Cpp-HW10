@@ -42,7 +42,7 @@ void ChatSession::run()
         string tmp = input;
         for (auto bot : bots)
         {
-            std::string fileName = "T800.txt";
+            std::string fileName = bot->name + ".txt";
             bot->loadResponses(fileName);
         }
         this->notifyBots(tmp);

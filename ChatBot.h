@@ -32,12 +32,12 @@ public:
      */
     void loadResponses(std::string fileName);
 
-private:
-
     /**
      * Name of the ChatBot
      */
     std::string name;
+
+private:
 
     /**
      * Map associating KEYWORD (string) to a response (string)
