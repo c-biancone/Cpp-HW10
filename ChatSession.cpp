@@ -1,20 +1,23 @@
-//
-// Created by Chris on 12/1/2021.
-//
-
 #include "ChatSession.h"
 
+using namespace std;
+
 ChatSession::ChatSession(std::string userName, bool echo)
-{}
+{
+    this->userName = userName;
+    cout << "created session\n";
+}
 
 void ChatSession::registerBot(std::shared_ptr<ChatBot> bot)
 {
     bots.push_back(bot);
+    cout << "registered bot\n";
 }
 
 void ChatSession::removeBot(std::shared_ptr<ChatBot> bot)
 {
     bots.remove(bot);
+    cout << "removed bot\n";
 }
 
 void ChatSession::notifyBots(std::string message)
@@ -22,10 +25,24 @@ void ChatSession::notifyBots(std::string message)
     for (auto bot : bots)
     {
         bot->newMessage(message);
+        cout << "message received\n";
     }
 }
 
 void ChatSession::run()
 {
+    cout << "[" << userName << "]: ";
+    string input;
+    cin >> input;
+
+    while (input != "QUIT")
+    {
+        for (auto bot : bots)
+        {
+            std::string fileName = "T800.txt";
+            bot->loadResponses(fileName);
+        }
+        this->notifyBots(input);
+    }
 
 }

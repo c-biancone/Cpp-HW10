@@ -1,7 +1,3 @@
-//
-// Created by Chris on 12/1/2021.
-//
-
 #include "ChatBot.h"
 #include <iostream>
 #include <fstream>
@@ -18,7 +14,7 @@ ChatBot::ChatBot(std::string name)
 void ChatBot::newMessage(std::string message)
 {
     cout.flush();
-    getline(cin >> ws, message);
+    // getline(cin >> ws, message);
 
     // convert to uppercase
     for_each(message.begin(), message.end(), [](char& c){c = ::toupper(c);});
@@ -42,17 +38,30 @@ void ChatBot::newMessage(std::string message)
 
 void ChatBot::loadResponses(std::string fileName)
 {
-    ifstream data;
-    char delimiter(':');
+    // need to use absolute path to file bc binaries in different location on my machine
+    ifstream data ("D:\\Documents\\RIT\\Semester_4\\C++\\Homework-10\\" + fileName);
+    string delimiter = ":";
+    size_t position = 0;
 
-    data.open(fileName);
+    string key, response;
+    string line;
 
-    string key;
-    string response;
+    // data.open("fileName", ifstream::in);
 
-    while(getline(data, key, delimiter) && getline(data, response))
+    if (data.is_open())
     {
-        responses[key] = response;
+        while (getline(data, line))
+        {
+            position = line.find(delimiter);
+            key = line.substr(0, position);
+            line.erase(0, position + delimiter.length());
+            response = line;
+            pair<string, string> pair (key, response);
+            responses.insert(pair);
+        }
+
+    } else {
+        cout << "Unable to open file\n";
     }
 
     data.close();

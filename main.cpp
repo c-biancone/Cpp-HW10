@@ -29,17 +29,17 @@ int main()
 
     // Read in username and create the chat session
     cin >> userName;
-    bool echo = true;
-    ChatSession session(userName, echo);
+    ChatSession session(userName, ECHO_INPUT);
 
     shared_ptr<ChatBot> bot;
 
+    cin >> botName;
     // Register the chatbots
     while(botName != "START")
     {
-        botName = std::to_string(cin.get());
         bot = make_shared<ChatBot>(botName);
         session.registerBot(bot);
+        cin >> botName;
     }
 
     // Run the chat session
