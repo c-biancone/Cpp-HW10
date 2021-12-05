@@ -13,20 +13,20 @@ ChatBot::ChatBot(std::string name)
 
 void ChatBot::newMessage(std::string message)
 {
-    cout.flush();
+    string tmp = message;
 
     // convert to uppercase
-    for_each(message.begin(), message.end(), [](char& c){c = ::toupper(c);});
+    for_each(tmp.begin(), tmp.end(), [](char& c){c = ::toupper(c);});
 
-    string tmp;
-    stringstream strStrm(message);
+    string word;
+    stringstream strStrm(tmp);
     map<string, string>::iterator it;
 
     // iterate words in string
-    while (strStrm >> tmp)
+    while (strStrm >> word)
     {
         // search for word in keys
-        it = responses.find(tmp);
+        it = responses.find(word);
         // if exists
         if (it != responses.end())
         {

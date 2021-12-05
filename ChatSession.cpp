@@ -34,20 +34,21 @@ void ChatSession::run()
     cout << "[" << userName << "]: ";
     string input, word;
     cout.flush();
-    // WHY IS THIS NOT WORKING
+
     getline(cin >> ws, input);
 
     while (input != "QUIT")
     {
+        string tmp = input;
         for (auto bot : bots)
         {
             std::string fileName = "T800.txt";
             bot->loadResponses(fileName);
         }
-        this->notifyBots(input);
+        this->notifyBots(tmp);
 
         cout << "[" << userName << "]: ";
-        cin >> input;
+        getline(cin >> ws, input);
     }
 
 }
