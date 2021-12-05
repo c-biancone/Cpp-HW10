@@ -14,15 +14,15 @@ ChatBot::ChatBot(std::string name)
 void ChatBot::newMessage(std::string message)
 {
     cout.flush();
-    // getline(cin >> ws, message);
 
     // convert to uppercase
     for_each(message.begin(), message.end(), [](char& c){c = ::toupper(c);});
 
-    // iterate through words and check matches with keys
     string tmp;
     stringstream strStrm(message);
     map<string, string>::iterator it;
+
+    // iterate words in string
     while (strStrm >> tmp)
     {
         // search for word in keys
@@ -30,8 +30,9 @@ void ChatBot::newMessage(std::string message)
         // if exists
         if (it != responses.end())
         {
-            // print response
+            // print corresponding response
             cout << it->second << "\n";
+            break;
         }
     }
 }
@@ -46,20 +47,22 @@ void ChatBot::loadResponses(std::string fileName)
     string key, response;
     string line;
 
-    // data.open("fileName", ifstream::in);
-
     if (data.is_open())
     {
         while (getline(data, line))
         {
+            // determine position of colon delimiter
             position = line.find(delimiter);
+            // key is substring before colon
             key = line.substr(0, position);
+            // remove key and delimiter from string
             line.erase(0, position + delimiter.length());
+            // response is what is left
             response = line;
+            // create pair for easy insertion to map
             pair<string, string> pair (key, response);
             responses.insert(pair);
         }
-
     } else {
         cout << "Unable to open file\n";
     }

@@ -6,23 +6,25 @@
 
 #IncludeRegexTransform: 
 
-/cygdrive/d/Documents/RIT/Semester_4/C++/Homework-10/ChatBot.cpp
-ChatBot.h
-/cygdrive/d/Documents/RIT/Semester_4/C++/Homework-10/ChatBot.h
-iostream
--
-fstream
--
-algorithm
--
-sstream
--
-
 /cygdrive/d/Documents/RIT/Semester_4/C++/Homework-10/ChatBot.h
 string
 -
 map
 -
 iostream
+-
+
+/cygdrive/d/Documents/RIT/Semester_4/C++/Homework-10/ChatSession.cpp
+ChatSession.h
+/cygdrive/d/Documents/RIT/Semester_4/C++/Homework-10/ChatSession.h
+sstream
+-
+
+/cygdrive/d/Documents/RIT/Semester_4/C++/Homework-10/ChatSession.h
+ChatBot.h
+/cygdrive/d/Documents/RIT/Semester_4/C++/Homework-10/ChatBot.h
+memory
+-
+list
 -
 
