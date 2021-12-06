@@ -6,6 +6,7 @@ using namespace std;
 ChatSession::ChatSession(std::string userName, bool echo)
 {
     this->userName = userName;
+    // echo is set to true in header file
     // cout << "created session\n";
 }
 
@@ -31,11 +32,15 @@ void ChatSession::notifyBots(std::string message)
 
 void ChatSession::run()
 {
-    cout << "[" << userName << "]: ";
+    // cout << "[" << userName << "]: ";
     string input, word;
     cout.flush();
 
     getline(cin >> ws, input);
+    if (this->echo == true)
+    {
+        cout << "[" << userName << "]: " << input << "\n";
+    }
 
     while (input != "QUIT")
     {
@@ -47,8 +52,12 @@ void ChatSession::run()
         }
         this->notifyBots(tmp);
 
-        cout << "[" << userName << "]: ";
+        // cout << "[" << userName << "]: ";
         getline(cin >> ws, input);
+        if (this->echo == true)
+        {
+            cout << "[" << userName << "]: " << input << "\n";
+        }
     }
 
 }

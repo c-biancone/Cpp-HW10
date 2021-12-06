@@ -15,6 +15,15 @@ void ChatBot::newMessage(std::string message)
 {
     string tmp = message;
 
+    // remove punctuation
+    for (size_t i = 0, len = tmp.size(); i < len; i++)
+    {
+        if (ispunct(tmp[i]))
+        {
+            tmp.erase(i--, 1);
+            len = tmp.size();
+        }
+    }
     // convert to uppercase
     for_each(tmp.begin(), tmp.end(), [](char& c){c = ::toupper(c);});
 
@@ -31,7 +40,7 @@ void ChatBot::newMessage(std::string message)
         if (it != responses.end())
         {
             // print corresponding response
-            cout << it->second << "\n";
+            cout << "[" << this->name << "]: " << it->second << "\n";
             break;
         }
     }
